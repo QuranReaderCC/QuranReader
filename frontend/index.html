@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="MyApp" />
+    <meta name="apple-mobile-web-app-title" content="MyApp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="wrapper">
+        <header>
+            <div class="header-left">
+                <a href="/" class="go-home-btn hidden" data-link>
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+            </div>
+            <div class="header-middle">
+                <a href="/" class="header-title-wrapper" data-link>
+                    <h1 class="header-title">Quran<span>Reader</span></h1>
+                </a>
+                <div class="search-bar-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="search-bar-c">
+                        <input class="search-bar">
+                        <button class="remove-search-btn hidden">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="search-results-menu-wrapper hidden">
+                        <div class="search-results-menu"></div>
+                        <div class="page-selector"></div>
+                        <div class="result-count"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="settings-wrapper">
+                    <button class="settings-button btn">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <div class="settings-menu-wrapper hidden">
+                        <h3>Settings</h3>
+                        <div class="settings-menu"></div>
+                    </div>
+                </div>
+                <div class="header-temp-menu"></div>
+            </div>
+        </header>
+        <main></main>
+    </div>
+
+    <button class="go-up-btn hidden">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+    <div class="keyboard hidden">
+        <div class="letters"></div>
+        <div class="keyboard-options">
+            <div></div>
+            <button class="btn key-btn space-bar"></button>
+            <button class="btn key-btn delete-char-btn">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="backdrop hidden"></div>
+
+    <script src="js/quran.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
+    <script src="js/settings.js" type="module"></script>
+    <script src="js/keyboard.js" type="module"></script>
+    <script src="js/search.js" type="module"></script>
+</body>
+
+</html>

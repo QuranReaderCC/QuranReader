@@ -1,4 +1,4 @@
-import { getData, saveData, buttonMenuToggle, toggleLanguages } from "./helpers.js";
+import { getData, saveData, buttonMenuToggle, toggleLanguages, mobileThemeColor } from "./helpers.js";
 
 const settingsButton = document.querySelector(".settings-button");
 const settingsMenuWrapper = document.querySelector(".settings-menu-wrapper");
@@ -102,17 +102,6 @@ for (let i = 0; i < settingOptions.length; i++) {
             document.querySelector(`[data-language=${lang}]`).classList.add("selected");
         });
     }
-    else if (setting.option == "Hide Elements") {
-        const hideElementsButton = document.createElement("button");
-        hideElementsButton.classList.add("setting-option-button");
-        hideElementsButton.addEventListener("click", () => { setHideElements(hideElementsButton) });
-        settingSelectList.append(hideElementsButton);
-
-        if (getData("Hide Elements") == true) {
-            hideElementsButton.classList.add("selected");
-            headerTitleWrapper.classList.add("hidden");
-        }
-    }
 }
 
 function setTheme(themeName) {
@@ -132,6 +121,8 @@ function setTheme(themeName) {
             el.classList.remove("selected");
         }
     });
+
+    mobileThemeColor();
 }
 
 function adjustFontSize(ui, dir) {
@@ -152,7 +143,7 @@ function adjustFontSize(ui, dir) {
 }
 
 function setLanguage(languageName, languageButton) {
-    const currentLanguages = getData("Language") || [];
+    const currentLanguages = getData("Language");
 
     if (!currentLanguages.includes(languageName)) {
         currentLanguages.push(languageName);
@@ -171,23 +162,7 @@ function setLanguage(languageName, languageButton) {
     toggleLanguages();
 }
 
-/*function setHideElements(hideElementsButton) {
-    let doHide = getData("Hide Elements") || false;
-
-    if (!doHide) {
-        hideElementsButton.classList.add("selected");
-        doHide = true;
-    }
-    else {
-        hideElementsButton.classList.remove("selected");
-        doHide = false;
-    }
-
-    saveData("Hide Elements", doHide);
-
-    toggleHideElements();
-}
-
+/*
 function toggleHideElements() {
     goHomeBtn.classList.toggle("hidden");
     goUpBtn.classList.toggle("hidden");

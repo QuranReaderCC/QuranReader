@@ -14,9 +14,7 @@ export default class extends AbstractView {
     }
 
     async getView(main, query) {
-        if (getData("Hide Elements") === false) {
-            document.querySelector(".go-home-btn").classList.remove("hidden");
-        }
+        document.querySelector(".go-home-btn").classList.remove("hidden");
 
         const { queryDisplay, queryObj } = this.displayQuery(query);
         if (!queryDisplay) return;

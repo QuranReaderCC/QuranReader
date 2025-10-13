@@ -13,7 +13,7 @@ export function buttonMenuToggle(menu) {
 }
 
 export function toggleLanguages() {
-    const currentLanguages = getData("Language") || [];
+    const currentLanguages = getData("Language");
     const verseTexts = document.querySelectorAll(".verse-text");
     const verseTextsLength = verseTexts.length;
 
@@ -78,4 +78,13 @@ export function isQueryValid(query, searchBar) {
 
 export function arabicNumber(number) {
     return number.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+}
+
+export function mobileThemeColor() {
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    const themeColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--base-color')
+        .trim();
+
+    themeColorMeta.setAttribute('content', themeColor);
 }

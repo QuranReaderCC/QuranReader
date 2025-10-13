@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" id="theme-color"/>
     <meta name="application-name" content="MyApp" />
     <meta name="apple-mobile-web-app-title" content="MyApp" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -26,12 +27,7 @@
 
     <div class="wrapper">
         <header>
-            <div class="header-left">
-                <a href="/" class="go-home-btn hidden" data-link>
-                    <i class="fa-solid fa-angle-left"></i>
-                </a>
-            </div>
-            <div class="header-middle">
+            <div class="header-content">
                 <a href="/" class="header-title-wrapper" data-link>
                     <h1 class="header-title">Quran<span>Reader</span></h1>
                 </a>
@@ -50,25 +46,31 @@
                     </div>
                 </div>
             </div>
-            <div class="header-right">
-                <div class="settings-wrapper">
-                    <button class="settings-button btn">
-                        <i class="fa-solid fa-gear"></i>
-                    </button>
-                    <div class="settings-menu-wrapper hidden">
-                        <h3>Settings</h3>
-                        <div class="settings-menu"></div>
-                    </div>
-                </div>
-                <div class="header-temp-menu"></div>
-            </div>
         </header>
-        <main></main>
-    </div>
 
-    <button class="go-up-btn hidden">
-        <i class="fa-solid fa-angle-up"></i>
-    </button>
+        <main></main>
+
+        <div class="menu">
+            <a href="/" class="go-home-btn hidden" data-link>
+                <i class="fa-solid fa-angle-left"></i>
+            </a>
+
+            <button class="go-up-btn hidden">
+                <i class="fa-solid fa-angle-up"></i>
+            </button>
+
+            <div class="settings-wrapper">
+                <button class="settings-button btn">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <div class="settings-menu-wrapper hidden">
+                    <h3>Settings</h3>
+                    <div class="settings-menu"></div>
+                </div>
+            </div>
+            <div class="header-temp-menu"></div>
+        </div>
+    </div>
 
     <div class="keyboard hidden">
         <div class="letters"></div>

@@ -17,6 +17,10 @@ const settingsMenuWrapper = document.querySelector(".settings-menu-wrapper");
 
 const keyboard = document.querySelector(".keyboard");
 
+if (!getData("Language")) {
+    saveData("Language", ["arabic", "english"]);
+}
+
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
@@ -84,9 +88,7 @@ window.onscroll = function () {
 function scrollFunction() {
     if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
         document.querySelector("header").classList.add("scroll");
-        if (getData("Hide Elements") === false) {
-            goUpBtn.classList.remove("hidden");
-        }
+        goUpBtn.classList.remove("hidden");
     } else {
         document.querySelector("header").classList.remove("scroll");
         goUpBtn.classList.add("hidden");

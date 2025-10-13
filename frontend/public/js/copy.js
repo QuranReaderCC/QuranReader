@@ -81,7 +81,7 @@ function multiSameCopyContent(verses) {
 }
 
 export function copyLink(verse) {
-    const url = `http://localhost:3000/read?${verse.surahNumber}:${verse.number}`;
+    const url = `http://quranreader.onrender.com/read?${verse.surahNumber}:${verse.number}`;
     copy(url);
 }
 

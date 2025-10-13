@@ -181,8 +181,8 @@ button:hover {
 }
 
 .btn {
-    width: 43px;
-    height: 43px;
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -196,6 +196,7 @@ header {
     width: 100%;
     height: 250px;
     display: flex;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -210,7 +211,7 @@ header {
     padding: 10px;
 }
 
-.scroll .header-middle {
+.scroll .header-content {
     gap: 0;
 }
 
@@ -227,22 +228,7 @@ header {
     color: var(--secondary-text);
 }
 
-header>* {
-    display: flex;
-    justify-content: center;
-}
-
-.header-left,
-.header-right {
-    flex: 1;
-    height: 100%;
-}
-
-.header-left {
-    justify-content: flex-start;
-}
-
-.header-middle {
+.header-content {
     width: 60%;
     height: 100%;
     display: flex;
@@ -250,15 +236,6 @@ header>* {
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
-}
-
-.header-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 10px;
-    position: relative;
 }
 
 .header-temp-menu {
@@ -289,6 +266,19 @@ header>* {
     font-family: "Outfit", sans-serif;
 }
 
+/** MENU **/
+
+.menu {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 /** SETTINGS **/
 
 .settings-wrapper {
@@ -296,6 +286,8 @@ header>* {
 }
 
 .settings-button {
+    width: 50px;
+    height: 50px;
     font-size: 1.1em;
 }
 
@@ -735,8 +727,8 @@ main {
 /** DIRECTIONS **/
 
 .go-home-btn {
-    width: 43px;
-    height: 43px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     font-size: 20px;
     border: 2px solid var(--primary-color);
@@ -749,7 +741,6 @@ main {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    position: fixed;
     left: 35px;
     bottom: 30px;
     font-size: 25px;
@@ -847,7 +838,8 @@ main {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 /** ANIMATIONS **/
@@ -928,7 +920,22 @@ main {
         padding-top: 0;
     }
 
-    .header-middle {
-        width: 70%;
+    .keyboard {
+        display: none;
+    }
+
+    .menu {
+        bottom: 0;
+        top: auto;
+        background-color: var(--base-color);
+        border-top: 2px solid var(--primary-color);
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .search-bar-wrapper {
+        width: 95%;
     }
 }

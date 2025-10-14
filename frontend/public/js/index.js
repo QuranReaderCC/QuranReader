@@ -117,7 +117,23 @@ document.addEventListener("click", (event) => {
     }
 });
 
+let touchStartY = 0;
+let touchStartX = 0;
+
 document.addEventListener("touchstart", (event) => {
+  const touch = event.touches[0];
+  touchStartY = touch.clientY;
+  touchStartX = touch.clientX;
+}, { passive: true });
+
+document.addEventListener("touchend", (event) => {
+  const touch = event.changedTouches[0];
+  const deltaY = Math.abs(touch.clientY - touchStartY);
+  const deltaX = Math.abs(touch.clientX - touchStartX);
+  
+  const isTap = deltaY < 10 && deltaX < 10;
+
+  if (isTap) {
     if (!document.querySelector(".surah-display")) return;
 
     if (!header.contains(event.target)
@@ -126,7 +142,8 @@ document.addEventListener("touchstart", (event) => {
         menu.classList.toggle("hidden");
         wrapper.classList.toggle("wrapper-hidden");
     }
-});
+  }
+}, { passive: true });
 
 goUpBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

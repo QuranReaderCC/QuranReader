@@ -3,7 +3,10 @@ import Read from "./views/Read.js";
 
 import { getData, saveData, isQueryValid } from "./helpers.js";
 
+const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector("main");
+const header = document.querySelector("header");
+const menu = document.querySelector(".menu");
 const headerTempMenu = document.querySelector(".header-temp-menu");
 const goUpBtn = document.querySelector(".go-up-btn");
 
@@ -87,10 +90,10 @@ window.onscroll = function () {
 
 function scrollFunction() {
     if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        document.querySelector("header").classList.add("scroll");
+        header.classList.add("scroll");
         goUpBtn.classList.remove("hidden");
     } else {
-        document.querySelector("header").classList.remove("scroll");
+        header.classList.remove("scroll");
         goUpBtn.classList.add("hidden");
     }
 }
@@ -114,8 +117,23 @@ document.addEventListener("click", (event) => {
     }
 });
 
+document.addEventListener("touchstart", (event) => {
+    if (!document.querySelector(".surah-display")) return;
+
+    if (!header.contains(event.target)
+    && !menu.contains(event.target)) {
+        header.classList.toggle("hidden");
+        menu.classList.toggle("hidden");
+        wrapper.classList.toggle("wrapper-hidden");
+    }
+});
+
 goUpBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    header.classList.remove("hidden");
+    menu.classList.remove("hidden");
+    wrapper.classList.remove("wrapper-hidden");
+
 });
 
 function checkIfHome() {

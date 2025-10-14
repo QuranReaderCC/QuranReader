@@ -9796,7 +9796,7 @@ const en_quran =
 30|2|The Romans have been overcome
 30|3|In the nearest land. But they, after their defeat, will overcome.
 30|4|Within some years. To God belongs the command before and after. And that day the believers will rejoice
-30|5|With the support of God. He supports whoeber He wills, and He is the Mighty, the Merciful.
+30|5|With the support of God. He supports whoever He wills, and He is the Mighty, the Merciful.
 30|6|The promise of God. God does not go back on His promise, but most of the people do not know.
 30|7|They know what is apparent of the worldly life, but they, of the Hereafter, are unaware.
 30|8|Do they not contemplate within themselves? God has not created the heavens and the earth and what is between them except in truth and for a specified term. And indeed, many of the people, in the meeting with their Lord, are disbelievers.
@@ -12649,6 +12649,9 @@ const en_quran =
 114|5|Who whispers into the breasts of mankind -
 114|6|From among the jinn and mankind."
 `
+
+const trns_quran =
+``
 
 const splitNames = names.trim().split("\n");
 const namesLength = splitNames.length;

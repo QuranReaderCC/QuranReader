@@ -14,7 +14,7 @@ export default class extends AbstractView {
     }
 
     async getView(main, query) {
-        document.querySelector(".go-home-btn").classList.remove("hidden");
+        document.querySelector(".go-home-btn").classList.remove("invisible");
 
         const { queryDisplay, queryObj } = this.displayQuery(query);
         if (!queryDisplay) return;
@@ -220,7 +220,7 @@ export default class extends AbstractView {
 
                 const verseNumber = document.createElement("div");
                 verseNumber.classList.add("verse-number");
-                verseNumber.textContent = verse.number;
+                verseNumber.textContent = verse.surahNumber + ":" + verse.number;
                 verseSidebar.append(verseNumber);
 
                 const verseCopyWrapper = document.createElement("div");

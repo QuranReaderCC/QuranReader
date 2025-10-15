@@ -513,6 +513,13 @@ main {
     }
 }
 
+.option-box p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-align: center;
+  word-break: break-word;
+}
+
+
 /** SURAH DISPLAY (SURAH) **/
 .surah-display {
     display: flex;
@@ -597,7 +604,7 @@ main {
 .verse-number {
     display: flex;
     align-items: center;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 .verse-body:hover .verse-copy,
@@ -788,7 +795,7 @@ main {
     margin: 5px;
 }
 
-.keyboard-options > *:not(:nth-child(2)) {
+.keyboard-options>*:not(:nth-child(2)) {
     flex: 1;
 }
 
@@ -838,6 +845,10 @@ main {
 }
 
 .hidden {
+    display: none;
+}
+
+.invisible {
     visibility: hidden;
     pointer-events: none;
 }
@@ -935,6 +946,14 @@ main {
         width: 100%;
     }
 
+    .wrapper:has(.surah-display) {
+        padding-top: 50px;
+    }
+
+    .wrapper:has(.surah-display) .header-title-wrapper {
+        display: none;
+    }
+
     .search-bar-wrapper {
         width: 95%;
     }
@@ -946,5 +965,21 @@ main {
 
     .wrapper-hidden {
         padding: 0;
+    }
+
+    .verse-number {
+        font-size: 1.1em;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        margin: 20px;
+    }
+
+    .option-box h2 {
+        font-size: 1.2em;
+    }
+
+    .wrapper {
+        padding-bottom: 80px;
     }
 }

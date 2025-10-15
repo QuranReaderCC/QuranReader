@@ -89,12 +89,21 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
+    if (wrapper.classList.contains("wrapper-hidden")) {
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            header.classList.add("hidden");
+        }
+        else {
+            header.classList.remove("hidden");
+        }
+    }
+
     if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
         header.classList.add("scroll");
-        goUpBtn.classList.remove("hidden");
+        goUpBtn.classList.remove("invisible");
     } else {
         header.classList.remove("scroll");
-        goUpBtn.classList.add("hidden");
+        goUpBtn.classList.add("invisible");
     }
 }
 
@@ -121,28 +130,37 @@ let touchStartY = 0;
 let touchStartX = 0;
 
 document.addEventListener("touchstart", (event) => {
-  const touch = event.touches[0];
-  touchStartY = touch.clientY;
-  touchStartX = touch.clientX;
+    const touch = event.touches[0];
+    touchStartY = touch.clientY;
+    touchStartX = touch.clientX;
 }, { passive: true });
 
 document.addEventListener("touchend", (event) => {
-  const touch = event.changedTouches[0];
-  const deltaY = Math.abs(touch.clientY - touchStartY);
-  const deltaX = Math.abs(touch.clientX - touchStartX);
-  
-  const isTap = deltaY < 10 && deltaX < 10;
+    const touch = event.changedTouches[0];
+    const deltaY = Math.abs(touch.clientY - touchStartY);
+    const deltaX = Math.abs(touch.clientX - touchStartX);
 
-  if (isTap) {
-    if (!document.querySelector(".surah-display")) return;
+    const isTap = deltaY < 10 && deltaX < 10;
 
-    if (!header.contains(event.target)
-    && !menu.contains(event.target)) {
-        header.classList.toggle("hidden");
-        menu.classList.toggle("hidden");
-        wrapper.classList.toggle("wrapper-hidden");
+    const isButton = event.target.tagName == "BUTTON";
+
+    if (isTap && !isButton) {
+        if (!document.querySelector(".surah-display")) return;
+
+        if (!header.contains(event.target)
+            && !menu.contains(event.target)) {
+            menu.classList.toggle("hidden");
+            wrapper.classList.toggle("wrapper-hidden");
+
+            if ((document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
+                && menu.classList.contains("hidden")) {
+                header.classList.add("hidden");
+            }
+            else {
+                header.classList.remove("hidden");
+            }
+        }
     }
-  }
 }, { passive: true });
 
 goUpBtn.addEventListener("click", () => {

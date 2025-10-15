@@ -10,7 +10,7 @@ export default class extends AbstractView {
     }
 
     async getView(main) {
-        document.querySelector(".go-home-btn").classList.add("hidden");
+        document.querySelector(".go-home-btn").classList.add("invisible");
 
         const surahListWrapper = document.createElement("div");
         surahListWrapper.classList.add("surah-list-wrapper");

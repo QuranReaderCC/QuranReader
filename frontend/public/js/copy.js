@@ -85,6 +85,6 @@ export function copyLink(verse) {
     copy(url);
 }
 
-function copy(content) {
+export function copy(content) {
     navigator.clipboard.writeText(content);
 }

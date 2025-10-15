@@ -238,11 +238,6 @@ header {
     gap: 5px;
 }
 
-.header-temp-menu {
-    position: absolute;
-    top: 55px;
-}
-
 .header-title-wrapper {
     width: max-content;
     height: 120px;
@@ -623,6 +618,12 @@ main {
     transition: 0.2s;
     background-color: transparent;
     padding: 10px;
+    display: none;
+}
+
+.copy-all-btn.verse-copy, .link-btn.verse-copy {
+    color: white;
+    font-size: 1.2em;
 }
 
 .verse-sidebar .verse-copy {
@@ -699,23 +700,6 @@ main {
     width: 50%;
     height: 100%;
     filter: invert(var(--invert));
-}
-
-.ref-copy-btn {
-    width: max-content;
-    height: max-content;
-    background-color: var(--highlight-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    font-size: 1em;
-    transition: 0.2s;
-    padding: 10px;
-}
-
-.ref-copy-btn:hover {
-    background-color: var(--hover-color);
-    cursor: pointer;
-    transition: 0.2s;
 }
 
 /** DIRECTIONS **/
@@ -938,6 +922,14 @@ main {
         padding-top: 50px;
     }
 
+    .wrapper:has(.surah-display) header {
+        height: max-content;
+    }
+
+    .wrapper:has(.surah-display) .header-title-wrapper {
+        display: none;
+    }
+
     .wrapper:has(.surah-display) .header-title-wrapper {
         display: none;
     }
@@ -973,6 +965,10 @@ main {
 
     .go-up-btn {
         position: static;
+    }
+
+    .wrapper:has(.surah-display) .verse-copy {
+        display: block;
     }
 }
 

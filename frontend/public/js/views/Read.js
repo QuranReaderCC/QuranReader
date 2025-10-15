@@ -1,12 +1,34 @@
 import AbstractView from "./AbstractView.js";
 import { quran } from "../quran.js";
 import { getData, toggleLanguages } from "../helpers.js";
-import { copyVerses, copyLink } from "../copy.js";
+import { copy, copyVerses, copyLink } from "../copy.js";
 
 const searchBar = document.querySelector(".search-bar");
-const headerTempMenu = document.querySelector(".header-temp-menu");
+
+const copyAllBtn = document.querySelector(".copy-all-btn");
+const linkBtn = document.querySelector(".link-btn");
+
+let copyAllContent = null;
+let linkContent = null;
+
+copyAllBtn.addEventListener("click", () => {
+    copyVerses(copyAllContent);
+    copyAllBtn.classList.add("copy-flash");
+});
+copyAllBtn.addEventListener("animationend", () => {
+    copyAllBtn.classList.remove("copy-flash");
+});
+
+linkBtn.addEventListener("click", () => {
+    copy(window.location.href);
+    linkBtn.classList.add("copy-flash");
+});
+linkBtn.addEventListener("animationend", () => {
+    linkBtn.classList.remove("copy-flash");
+});
 
 const scrollToOffset = 270;
+
 
 export default class extends AbstractView {
     constructor() {
@@ -19,33 +41,12 @@ export default class extends AbstractView {
         const { queryDisplay, queryObj } = this.displayQuery(query);
         if (!queryDisplay) return;
         main.append(queryDisplay);
-        //searchBar.value = query.replaceAll(",", ", ");
         toggleLanguages();
 
         const scrollToRef = queryDisplay.querySelector("[data-ref]");
 
         if (scrollToRef) {
-            const refMenu = document.createElement("div");
-            refMenu.classList.add("ref-menu");
-            headerTempMenu.append(refMenu);
-
-            const verseCopyWrapper = document.createElement("div");
-            refMenu.append(verseCopyWrapper);
-
-            const verseCopy = document.createElement("button");
-            verseCopy.classList.add("ref-copy-btn", "verse-copy");
-            verseCopy.addEventListener("click", () => {
-                copyVerses([[...Object.values(queryObj[0].verses)]]);
-                verseCopy.classList.add("copy-flash");
-            });
-            verseCopy.addEventListener("animationend", () => {
-                verseCopy.classList.remove("copy-flash");
-            });
-            verseCopyWrapper.append(verseCopy);
-
-            const verseCopyIcon = document.createElement("i");
-            verseCopyIcon.classList.add("fa-solid", "fa-copy");
-            verseCopy.append(verseCopyIcon);
+            copyAllContent = [[...Object.values(queryObj[0].verses)]];
 
             const refPos = scrollToRef.getBoundingClientRect().top + window.scrollY - scrollToOffset;
 
@@ -296,32 +297,9 @@ export default class extends AbstractView {
             }
         }
 
-        if (queryObj.length > 1) {
-            const refMenu = document.createElement("div");
-            refMenu.classList.add("ref-menu");
-            headerTempMenu.append(refMenu);
-
-            const verseCopyWrapper = document.createElement("div");
-            refMenu.append(verseCopyWrapper);
-
-            const verseCopy = document.createElement("button");
-            verseCopy.classList.add("ref-copy-btn", "verse-copy");
-            verseCopy.style.borderColor = "green";
-
+        if (queryObj.length > 0) {
             const asArrays = queryObj.map(item => Object.values(item.verses));
-
-            verseCopy.addEventListener("click", () => {
-                copyVerses(asArrays);
-                verseCopy.classList.add("copy-flash");
-            });
-            verseCopy.addEventListener("animationend", () => {
-                verseCopy.classList.remove("copy-flash");
-            });
-            verseCopyWrapper.append(verseCopy);
-
-            const verseCopyIcon = document.createElement("i");
-            verseCopyIcon.classList.add("fa-solid", "fa-copy");
-            verseCopy.append(verseCopyIcon);
+            copyAllContent = asArrays;
         }
 
         return { queryDisplay: surahDisplay, queryObj: queryObj };

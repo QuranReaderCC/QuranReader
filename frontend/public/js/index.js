@@ -7,7 +7,6 @@ const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 const menu = document.querySelector(".menu");
-const headerTempMenu = document.querySelector(".header-temp-menu");
 const goUpBtn = document.querySelector(".go-up-btn");
 
 const searchBarWrapper = document.querySelector(".search-bar-wrapper");
@@ -55,7 +54,6 @@ const router = async () => {
     const view = new match.route.view(query);
 
     main.innerHTML = "";
-    headerTempMenu.innerHTML = "";
     await view.getView(main, query);
 };
 
@@ -70,9 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelector(".search-bar").addEventListener('keydown', e => {
-        if (e.key === "Enter" && isQueryValid(e.target.value, e.target)) {
+        let unlinkedQuery = e.target.value.split("?");
+        unlinkedQuery = unlinkedQuery[1] ? unlinkedQuery[1] : unlinkedQuery[0];
+
+        if (e.key === "Enter" && isQueryValid(unlinkedQuery, e.target)) {
             e.preventDefault();
-            navigateTo(`/read?${e.target.value.replaceAll(" ", "")}`);
+            navigateTo(`/read?${unlinkedQuery.replaceAll(" ", "")}`);
             keyboard.classList.add("hidden");
             searchResultsMenuWrapper.classList.add("hidden");
             backdrop.classList.add("hidden");

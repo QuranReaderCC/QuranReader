@@ -48,6 +48,8 @@ export default class extends AbstractView {
         if (scrollToRef) {
             copyAllContent = [[...Object.values(queryObj[0].verses)]];
 
+            copyAllBtn.classList.add("highlighted-copy");
+
             const refPos = scrollToRef.getBoundingClientRect().top + window.scrollY - scrollToOffset;
 
             window.scrollTo({ top: refPos, behavior: "smooth" });
@@ -300,6 +302,7 @@ export default class extends AbstractView {
         if (queryObj.length > 0) {
             const asArrays = queryObj.map(item => Object.values(item.verses));
             copyAllContent = asArrays;
+            copyAllBtn.classList.remove("highlighted-copy");
         }
 
         return { queryDisplay: surahDisplay, queryObj: queryObj };

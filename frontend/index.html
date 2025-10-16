@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#000000" id="theme-color"/>
+    <meta name="theme-color" content="#000000" id="theme-color" />
     <meta name="application-name" content="Quran" />
     <meta name="apple-mobile-web-app-title" content="Quran" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -27,27 +27,39 @@
     <div class="bg"></div>
 
     <div class="wrapper">
-        <header>
-            <div class="header-content">
-                <a href="/" class="header-title-wrapper" data-link>
-                    <h1 class="header-title">Quran<span>Reader</span></h1>
-                </a>
-                <div class="search-bar-wrapper">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <div class="search-bar-c">
-                        <input class="search-bar">
-                        <button class="remove-search-btn hidden">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
+        <div class="header-wrapper">
+            <header>
+                <div class="header-content">
+                    <a href="/" class="header-title-wrapper" data-link>
+                        <h1 class="header-title">Quran<span>Reader</span></h1>
+                    </a>
+                    <div class="search-bar-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="search-bar-c">
+                            <input class="search-bar">
+                            <button class="remove-search-btn hidden">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="search-results-menu-wrapper hidden">
+                            <div class="search-results-menu"></div>
+                            <div class="page-selector"></div>
+                            <div class="result-count"></div>
+                        </div>
                     </div>
-                    <div class="search-results-menu-wrapper hidden">
-                        <div class="search-results-menu"></div>
-                        <div class="page-selector"></div>
-                        <div class="result-count"></div>
+                    <div class="keyboard hidden">
+                        <div class="letters"></div>
+                        <div class="keyboard-options">
+                            <div></div>
+                            <button class="btn key-btn space-bar"></button>
+                            <button class="btn key-btn delete-char-btn">
+                                <i class="fa-solid fa-delete-left"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </div>
 
         <main></main>
 
@@ -77,17 +89,6 @@
                     <div class="settings-menu"></div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="keyboard hidden">
-        <div class="letters"></div>
-        <div class="keyboard-options">
-            <div></div>
-            <button class="btn key-btn space-bar"></button>
-            <button class="btn key-btn delete-char-btn">
-                <i class="fa-solid fa-delete-left"></i>
-            </button>
         </div>
     </div>
 

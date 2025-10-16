@@ -36,7 +36,7 @@ const names =
 34|سبإ|Saba|Sheba
 35|فاطر|Fatir|The Creator
 36|يس|Ya-Sin|Ya-Sin
-37|الصافات|As-Saffat|Those Ranged in Rows
+37|الصافات|As-Saffat|Those In Rows
 38|ص|Saad|Saad
 39|الزمر|Az-Zumar|The Groups
 40|غافر|Ghafir|The Forgiver
@@ -45,7 +45,7 @@ const names =
 43|الزخرف|Az-Zukhruf|The Adornments
 44|الدخان|Ad-Dukhan|The Smoke
 45|الجاثية|Al-Jathiyah|The Crouching
-46|الأحقاف|Al-Ahqaf|The Wind-Curved Sandhills
+46|الأحقاف|Al-Ahqaf|The Dunes
 47|محمد|Muhammad|Muhammad
 48|الفتح|Al-Fath|The Victory
 49|الحجرات|Al-Hujurat|The Rooms
@@ -54,13 +54,13 @@ const names =
 52|الطور|At-Tur|The Mount
 53|النجم|An-Najm|The Star
 54|القمر|Al-Qamar|The Moon
-55|الرحمن|Ar-Rahman|The Beneficent
-56|الواقعة|Al-Waqi'ah|The Inevitable
+55|الرحمن|Ar-Rahman|The Merciful
+56|الواقعة|Al-Waqi'ah|The Happening
 57|الحديد|Al-Hadid|The Iron
 58|المجادلة|Al-Mujadila|The Arguing Woman
 59|الحشر|Al-Hashr|The Gathering
 60|الممتحنة|Al-Mumtahanah|The Examined Woman
-61|الصف|As-Saff|The Ranks
+61|الصف|As-Saff|The Row
 62|الجمعة|Al-Jumu'ah|The Congregation
 63|المنافقون|Al-Munafiqun|The Hypocrites
 64|التغابن|At-Taghabun|The Mutual Disillusion
@@ -69,20 +69,20 @@ const names =
 67|الملك|Al-Mulk|The Sovereignty
 68|القلم|Al-Qalam|The Pen
 69|الحاقة|Al-Haqqah|The True Happening
-70|المعارج|Al-Ma'arij|The Ascending Stairways
+70|المعارج|Al-Ma'arij|The Escalators
 71|نوح|Nuh|Noah
 72|الجن|Al-Jinn|The Djinn
 73|المزمل|Al-Muzzammil|The Enshrouded One
 74|المدثر|Al-Muddathir|The Cloaked One
 75|القيامة|Al-Qiyamah|The Resurrection
-76|الانسان|Al-Insan|Man
+76|الانسان|Al-Insan|The Human
 77|المرسلات|Al-Mursalat|The Emissaries
-78|النبإ|An-Naba|The Announcement
-79|النازعات|An-Nazi'at|Those Who Drag Forth
+78|النبإ|An-Naba|The News
+79|النازعات|An-Nazi'at|Those Who Draw Out
 80|عبس|Abasa|He Frowned
-81|التكوير|At-Takwir|The Overthrowing
+81|التكوير|At-Takwir|The Wrapping
 82|الإنفطار|Al-Infitar|The Cleaving
-83|المطففين|Al-Mutaffifin|Defrauding
+83|المطففين|Al-Mutaffifin|The Defrauders
 84|الانشقاق|Al-Inshiqaq|The Splitting Open
 85|البروج|Al-Buruj|The Stellar Towers
 86|الطارق|At-Tariq|The Knocking Star
@@ -92,28 +92,28 @@ const names =
 90|البلد|Al-Balad|The City
 91|الشمس|Ash-Shams|The Sun
 92|الليل|Al-Layl|The Night
-93|الضحى|Ad-Duhaa|The Morning Hours
-94|الشرح|Ash-Sharh|The Relief
+93|الضحى|Ad-Duhaa|The Morning
+94|الشرح|Ash-Sharh|The Expanding
 95|التين|At-Tin|The Fig
 96|العلق|Al-Alaq|The Clot
-97|القدر|Al-Qadr|The Power
+97|القدر|Al-Qadr|The Decree
 98|البينة|Al-Bayyinah|The Clear Proof
 99|الزلزلة|Az-Zalzalah|The Earthquake
-100|العاديات|Al-Adiyat|The Courser
+100|العاديات|Al-Adiyat|The Coursers
 101|القارعة|Al-Qari'ah|The Calamity
-102|التكاثر|At-Takathur|Rivalry in World Increase
-103|العصر|Al-Asr|The Declining Day
+102|التكاثر|At-Takathur|The Rivalry in Increase
+103|العصر|Al-Asr|The Time
 104|الهمزة|Al-Humazah|The Traducer
 105|الفيل|Al-Fil|The Elephant
 106|قريش|Quraysh|Quraysh
-107|الماعون|Al-Ma'un|Small Kindnesses
-108|الكوثر|Al-Kawthar|Abundance
+107|الماعون|Al-Ma'un|The Small Assistance
+108|الكوثر|Al-Kawthar|The Abundance
 109|الكافرون|Al-Kafirun|The Disbelievers
-110|النصر|An-Nasr|Divine Support
+110|النصر|An-Nasr|The Support
 111|المسد|Al-Masad|The Palm Fiber
-112|الإخلاص|Al-Ikhlas|Sincerity
+112|الإخلاص|Al-Ikhlas|The Sincerity
 113|الفلق|Al-Falaq|The Daybreak
-114|الناس|An-Nas|Mankind
+114|الناس|An-Nas|The People
 `
 
 const ar_quran =

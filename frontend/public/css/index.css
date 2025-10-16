@@ -192,8 +192,14 @@ button:hover {
 
 /** HEADER **/
 
-header {
+.header-wrapper {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    width: 85%;
     height: 250px;
     display: flex;
     justify-content: center;
@@ -201,7 +207,7 @@ header {
     position: fixed;
     top: 0;
     transition: 0.4s;
-    z-index: 10;
+    z-index: 60;
     padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -268,10 +274,10 @@ header {
     width: 100%;
     padding: 10px;
     top: 0;
-    z-index: 50;
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    z-index: 50;
 }
 
 /** SETTINGS **/
@@ -374,7 +380,7 @@ header {
 /** SEARCH BAR **/
 
 .search-bar-wrapper {
-    width: 70%;
+    width: 80%;
     background-color: var(--base-color);
     display: flex;
     align-items: center;
@@ -618,12 +624,23 @@ main {
     transition: 0.2s;
     background-color: transparent;
     padding: 10px;
+
+    &:hover {
+        color: var(--text-color);
+    }
+}
+
+.copy-all-btn,
+.link-btn {
+    font-size: 1.2em;
     display: none;
 }
 
-.copy-all-btn.verse-copy, .link-btn.verse-copy {
-    color: white;
-    font-size: 1.2em;
+.wrapper:has(.surah-display) {
+    & .copy-all-btn,
+    .link-btn {
+        display: block;
+    }
 }
 
 .verse-sidebar .verse-copy {
@@ -797,6 +814,12 @@ main {
     animation: flash 0.4s ease;
 }
 
+.highlighted-copy {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 7px;
+}
+
 .current {
     background-color: var(--highlight-color);
     border: 2px solid var(--hover-color);
@@ -869,7 +892,35 @@ main {
 
 /** MEDIA QUERIES **/
 
+@media only screen and (min-width: 1001px) {
+
+    .copy-all-btn,
+    .link-btn {
+        position: fixed;
+        bottom: 10px;
+        right: 0;
+    }
+
+    .copy-all-btn {
+        right: 50px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .search-bar-wrapper {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
+    header {
+        width: 100%;
+    }
+
+    .search-bar-wrapper {
+        width: 70%;
+    }
+
     .surah-list {
         width: 95%;
     }
@@ -912,6 +963,7 @@ main {
         top: auto;
         background-color: var(--base-color);
         border-top: 2px solid var(--primary-color);
+        z-index: 50;
     }
 
     .header-content {
@@ -932,10 +984,6 @@ main {
 
     .wrapper:has(.surah-display) .header-title-wrapper {
         display: none;
-    }
-
-    .search-bar-wrapper {
-        width: 95%;
     }
 
     .settings-menu-wrapper {
@@ -969,6 +1017,12 @@ main {
 
     .wrapper:has(.surah-display) .verse-copy {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .search-bar-wrapper {
+        width: 100%;
     }
 }
 
